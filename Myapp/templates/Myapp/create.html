@@ -1,0 +1,13 @@
+{% extends 'Myapp/base.html' %}
+{% block title %}Create New List{% endblock %}
+{% block content %}
+<form method="post" action="/create/" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+    {% comment %} {{form.as_p}} {% endcomment %}
+    <button type="submit" name="save" class="btn btn-success">Add New</button>
+    {{form.name}}
+    </div>
+</form>
+{% endblock %}
